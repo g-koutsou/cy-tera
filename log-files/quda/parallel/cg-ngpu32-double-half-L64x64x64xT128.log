@@ -1,0 +1,90 @@
+running the following test:
+prec    prec_sloppy   multishift  matpc_type  recon  recon_sloppy S_dimension T_dimension Ls_dimension   dslash_type  normalization
+double     half          0        even_even     18     18          32/ 32/ 32      32         16               clover     kappa
+Grid partition info:     X  Y  Z  T
+                         1  1  1  1
+QUDA 0.7.1 (git v0.7.1-0-g050e31d-dirty)
+Found device 0: Tesla K20X
+Using device 0: Tesla K20X
+WARNING: Failed to determine NUMA affinity for device 0 (possibly not applicable)
+Loaded 133 sets of cached parameters from .//tunecache.tsv
+Creating a DiracCloverPC operator
+Creating a DiracCloverPC operator
+Creating a DiracCloverPC operator
+Source: CPU = 1.3422e+08, CUDA copy = 1.3422e+08
+Solution: CPU = 0, CUDA copy = 0
+Prepared source = 1.3422e+08
+Prepared solution = 0
+Prepared source post mass rescale = 1.3422e+08
+Creating a CG solver
+CG: 0 iterations, <r,r> = 1.108688e+08, |r|/|b| = 1.000000e+00
+CG: 1 iterations, <r,r> = 1.790551e+07, |r|/|b| = 4.018728e-01
+CG: 2 iterations, <r,r> = 4.166192e+06, |r|/|b| = 1.938496e-01
+CG: 3 iterations, <r,r> = 6.299794e+05, |r|/|b| = 7.538041e-02
+CG: 4 iterations, <r,r> = 8.532536e+04, |r|/|b| = 2.774178e-02
+CG: 5 iterations, <r,r> = 1.242783e+04, |r|/|b| = 1.058749e-02
+CG: 6 iterations, <r,r> = 2.249561e+03, |r|/|b| = 4.504475e-03
+CG: 7 iterations, <r,r> = 5.679319e+02, |r|/|b| = 2.263307e-03
+CG: 8 iterations, <r,r> = 1.767674e+02, |r|/|b| = 1.262689e-03
+CG: 9 iterations, <r,r> = 5.257192e+01, |r|/|b| = 6.886083e-04
+CG: 10 iterations, <r,r> = 1.437174e+01, |r|/|b| = 3.600393e-04
+CG: 11 iterations, <r,r> = 4.105604e+00, |r|/|b| = 1.924349e-04
+CG: 12 iterations, <r,r> = 1.239185e+00, |r|/|b| = 1.057215e-04
+CG: 13 iterations, <r,r> = 3.672890e-01, |r|/|b| = 5.755715e-05
+CG: 14 iterations, <r,r> = 1.067771e-01, |r|/|b| = 3.103376e-05
+CG: 15 iterations, <r,r> = 3.173949e-02, |r|/|b| = 1.691980e-05
+CG: 16 iterations, <r,r> = 9.500623e-03, |r|/|b| = 9.257023e-06
+CG: 17 iterations, <r,r> = 2.792558e-03, |r|/|b| = 5.018760e-06
+CG: 18 iterations, <r,r> = 8.245461e-04, |r|/|b| = 2.727111e-06
+CG: 19 iterations, <r,r> = 2.485027e-04, |r|/|b| = 1.497135e-06
+CG: 20 iterations, <r,r> = 7.440804e-05, |r|/|b| = 8.192288e-07
+CG: 21 iterations, <r,r> = 2.188473e-05, |r|/|b| = 4.442894e-07
+CG: 22 iterations, <r,r> = 6.497174e-06, |r|/|b| = 2.420793e-07
+CG: 23 iterations, <r,r> = 1.964543e-06, |r|/|b| = 1.331147e-07
+CG: 24 iterations, <r,r> = 5.899605e-07, |r|/|b| = 7.294689e-08
+CG: Reliable updates = 7
+CG: Convergence at 24 iterations, L2 relative residual: iterated = 7.294689e-08, true = 7.294689e-08
+Solution = 2.09089e+08
+Reconstructed: CUDA solution = 2.09089e+08, CPU copy = 2.09089e+08
+Device memory used:
+   Spinor: 0.468750 GiB
+    Gauge: 0.000000 GiB
+   Clover: 0.000000 GiB
+
+Done: 24 iter / 0.728902 secs = 5757.78 Gflops, total time = 3.57 secs
+Residuals: (L2 relative) tol 1e-07, QUDA = 7.29469e-08, host = 8.87848e-08; (heavy-quark) tol 0, QUDA = 5.40806e-08
+
+               initQuda Total time = 1.10141 secs
+
+          loadGaugeQuda Total time = 0.527992 secs
+              download     = 0.498434 secs (  94.4%), with        1 calls at 4.984340e+05 us per call
+                  init     = 0.028703 secs (  5.44%), with        1 calls at 2.870300e+04 us per call
+               compute     = 0.000436 secs (0.0826%), with        1 calls at 4.360000e+02 us per call
+                  free     = 0.000417 secs ( 0.079%), with        1 calls at 4.170000e+02 us per call
+     total accounted       = 0.527990 secs (   100%)
+     total missing         = 0.000002 secs (0.000379%)
+
+         loadCloverQuda Total time = 0.935249 secs
+              download     = 0.922530 secs (  98.6%), with        1 calls at 9.225300e+05 us per call
+                  init     = 0.001624 secs ( 0.174%), with        2 calls at 8.120000e+02 us per call
+     total accounted       = 0.924154 secs (  98.8%)
+     total missing         = 0.011095 secs (  1.19%)
+
+             invertQuda Total time = 1.00784 secs
+              download     = 0.017768 secs (  1.76%), with        1 calls at 1.776800e+04 us per call
+                upload     = 0.019160 secs (   1.9%), with        1 calls at 1.916000e+04 us per call
+                  init     = 0.051207 secs (  5.08%), with        1 calls at 5.120700e+04 us per call
+              preamble     = 0.000001 secs (9.92e-05%), with        1 calls at 1.000000e+00 us per call
+               compute     = 0.728902 secs (  72.3%), with        1 calls at 7.289020e+05 us per call
+              epilogue     = 0.050788 secs (  5.04%), with        1 calls at 5.078800e+04 us per call
+                  free     = 0.000474 secs ( 0.047%), with        1 calls at 4.740000e+02 us per call
+     total accounted       = 0.868300 secs (  86.2%)
+     total missing         = 0.139539 secs (  13.8%)
+
+                endQuda Total time = 0.232417 secs
+
+Device memory used = 2556.0 MB
+Page-locked host memory used = 813.0 MB
+Total host memory used >= 897.0 MB
+
+Application 5243911 resources: utime ~416s, stime ~64s, Rss ~3508280, inblocks ~7931664, outblocks ~17682873

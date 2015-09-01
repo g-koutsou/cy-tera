@@ -1,0 +1,107 @@
+running the following test:
+prec    recon   test_type     matpc_type   dagger   S_dim         T_dimension   Ls_dimension dslash_type    niter
+double   18       0              even_even    0     32/ 32/ 32         64             16           clover   10
+Grid partition info:     X  Y  Z  T
+                         0  0  0  0
+Randomizing fields... done.
+QUDA 0.7.1 (git v0.7.1-0-g050e31d-dirty)
+Found device 0: Tesla K20X
+Using device 0: Tesla K20X
+WARNING: Failed to determine NUMA affinity for device 0 (possibly not applicable)
+WARNING: Environment variable QUDA_RESOURCE_PATH is not set.
+WARNING: Caching of tuned parameters will be disabled.
+Sending gauge field to GPU
+Sending clover field to GPU
+Creating cudaSpinor
+Creating cudaSpinorOut
+Sending spinor field to GPU
+Source: CPU = 8.390926e+06, CUDA = 8.390926e+06
+Creating a DiracCloverPC operator
+
+Spinor mem: 0.188 GiB
+Gauge mem: 1.000 GiB
+Calculating reference implementation...done.
+Tuning...
+Tuned block=(256,1,1), shared=12289 giving 115.31 Gflop/s, 206.34 GB/s for N4quda16CloverDslashCudaI7double2S1_S1_EE with type=interior,comm=0000,ghost=0000,reconstruct=18
+Executing 10 kernel loops...
+done.
+
+Tuned block=(224,1,1), shared=43200 giving 0.00 Gflop/s, 59.35 GB/s for N4quda10PackSpinorIddLi4ELi3ENS_21SpaceSpinorColorOrderIdLi4ELi3EEENS_11FloatNOrderIdLi4ELi3ELi2EEENS_8RelBasisIddLi4ELi3EEEEE with out_stride=1048576,in_stride=1048576
+16638.605297us per kernel call
+GFLOPS = 114.949696
+Tuned block=(480,1,1), grid=(112,1,1), shared=3840 giving 43.62 Gflop/s, 174.50 GB/s for N4quda5Norm2Id7double2S1_EE with vol=1048576,stride=1048576,precision=8
+Results: CPU = 214504937.387037, CUDA=214504937.387064, CPU-CUDA = 214504937.387036
+[0;32m[==========] [mRunning 1 test from 1 test case.
+[0;32m[----------] [mGlobal test environment set-up.
+[0;32m[----------] [m1 test from dslash
+[0;32m[ RUN      ] [mdslash.verify
+0 fails = 0
+1 fails = 0
+2 fails = 0
+3 fails = 0
+4 fails = 0
+5 fails = 0
+6 fails = 0
+7 fails = 0
+8 fails = 0
+9 fails = 0
+10 fails = 0
+11 fails = 0
+12 fails = 0
+13 fails = 0
+14 fails = 0
+15 fails = 0
+16 fails = 0
+17 fails = 0
+18 fails = 0
+19 fails = 0
+20 fails = 0
+21 fails = 0
+22 fails = 0
+23 fails = 0
+1.000000e-01 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-02 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-03 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-04 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-05 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-06 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-07 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-08 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-09 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-10 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-11 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-12 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-13 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-14 Failures: 0 / 25165824  = 0.000000e+00
+1.000000e-15 Failures: 3014854 / 25165824  = 1.197995e-01
+1.000000e-16 Failures: 20437460 / 25165824  = 8.121117e-01
+[0;32m[       OK ] [mdslash.verify (19468 ms)
+[0;32m[----------] [m1 test from dslash (19468 ms total)
+
+[0;32m[----------] [mGlobal test environment tear-down
+[0;32m[==========] [m1 test from 1 test case ran. (19468 ms total)
+[0;32m[  PASSED  ] [m1 test.
+
+               initQuda Total time = 1.00418 secs
+
+          loadGaugeQuda Total time = 1.18586 secs
+              download     = 1.144036 secs (  96.5%), with        1 calls at 1.144036e+06 us per call
+                  init     = 0.040318 secs (   3.4%), with        1 calls at 4.031800e+04 us per call
+               compute     = 0.000001 secs (8.43e-05%), with        1 calls at 1.000000e+00 us per call
+                  free     = 0.001500 secs ( 0.126%), with        1 calls at 1.500000e+03 us per call
+     total accounted       = 1.185855 secs (   100%)
+     total missing         = 0.000002 secs (0.000169%)
+
+         loadCloverQuda Total time = 4.58803 secs
+              download     = 4.586099 secs (   100%), with        1 calls at 4.586099e+06 us per call
+                  init     = 0.001795 secs (0.0391%), with        1 calls at 1.795000e+03 us per call
+     total accounted       = 4.587894 secs (   100%)
+     total missing         = 0.000134 secs (0.00292%)
+
+                endQuda Total time = 0.270355 secs
+
+Device memory used = 4470.0 MB
+Page-locked host memory used = 1206.0 MB
+Total host memory used >= 2089.5 MB
+
+Application 5242057 resources: utime ~79s, stime ~3s, Rss ~5211864, inblocks ~246620, outblocks ~553169
